@@ -1,11 +1,14 @@
 @prefix owlunit: <https://w3id.org/OWLunit/ontology/> . 
-@prefix td: <https://raw.githubusercontent.com/iosonopersia/KE_hands_on/main/cq/toydataset/> .
+@prefix td: <https://raw.githubusercontent.com/iosonopersia/KE_hands_on/main/cq_test/toy_dataset/> .
+@prefix tc: <https://raw.githubusercontent.com/iosonopersia/KE_hands_on/main/cq_test/testcase/> .
 
-tc:cq1 a owlunit:CompetencyQuestionVerification ;
+tc:cq.ttl a owlunit:CompetencyQuestionVerification ;
+    
     owlunit:hasCompetencyQuestion "When was a recording produced?" ; 
-    owlunit:hasSPARQLUnitTest " " ; 
 
-    owlunit:hasInputData td:xx ; 
+    owlunit:hasSPARQLUnitTest "PREFIX mp: <https://w3id.org/polifonia/ON/musical-performance/> PREFIX core: <https://w3id.org/polifonia/ON/core/> SELECT ?start ?end WHERE { ?recording a mp:Recording; mp:isRecordingProducedBy ?activity. ?activity a mp:RecordingActivity; core:hasTimeInterval ?timeInterval. ?timeInterval a core:TimeInterval; core:startTime ?start; core:endTime ?end. }" ; 
+
+    owlunit:hasInputData td:toy_dataset.ttl ; 
 
     owlunit:hasInputTestDataCategory owlunit:ToyDataset; 
 
