@@ -1,0 +1,16 @@
+@prefix mp: <https://w3id.org/polifonia/ON/musical-performance/> .
+@prefix core: <https://w3id.org/polifonia/ON/core/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix example: <https://example.org/> .
+
+example:rec1 a mp:Recording;
+    mp:isRecordingProducedBy example:act1.
+
+example:act1 a mp:RecordingActivity;
+    mp:producesRecording example:rec1;
+    core:hasTimeInterval example:int1.
+
+example:int1 a core:TimeInterval;
+    core:isTimeIntervalOf example:act1;
+    core:startTime '2021-12-14T09:35:00Z'^^xsd:dateTime;
+    core:endTime '2021-12-14-11:35:00Z'^^xsd:dateTime.
