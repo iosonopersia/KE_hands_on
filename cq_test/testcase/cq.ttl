@@ -1,0 +1,14 @@
+@prefix owlunit: <https://w3id.org/OWLunit/ontology/> . 
+@prefix td: <https://raw.githubusercontent.com/iosonopersia/KE_hands_on/main/cq/toydataset/> .
+
+tc:cq1 a owlunit:CompetencyQuestionVerification ;
+    owlunit:hasCompetencyQuestion "When was a recording produced?" ; 
+    owlunit:hasSPARQLUnitTest " " ; 
+
+    owlunit:hasInputData td:xx ; 
+
+    owlunit:hasInputTestDataCategory owlunit:ToyDataset; 
+
+    owlunit:hasExpectedResult "{  \"head\": { \"vars\": [  \"start\", \"end\" ] } ,  \"results\": {  \"bindings\": [ { \"start\": {  \"type\":  \"literal\" ,  \"value\":  \"2021-12-14T09:35:00Z\", \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" }, \"end\": {  \"type\":  \"literal\" ,  \"value\":  \"2021-12-14T11:35:00Z\", \"datatype\": \"http://www.w3.org/2001/XMLSchema#dateTime\" }  } ] } }"; 
+
+    owlunit:testsOntology mp: . 
